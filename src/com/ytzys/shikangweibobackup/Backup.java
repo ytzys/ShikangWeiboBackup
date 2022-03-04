@@ -55,7 +55,7 @@ public class Backup {
                                 writer.write(text);
                                 writer.close();
                             } catch (Exception e) {
-
+                                System.out.println(listEntity.text);
                             }
                         } else {
                             if (listEntity.edit_count >= 1) {
@@ -96,7 +96,7 @@ public class Backup {
         executor.execute(task);
         while (true) {
             try {
-                Thread.sleep(20 * 60 * 1000);
+                Thread.sleep(10 * 60 * 1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -111,7 +111,7 @@ public class Backup {
         int readSize;
         HttpURLConnection conn = (HttpURLConnection) url
                 .openConnection();
-        conn.setRequestProperty("Cookie", "SSOLoginState=1602124982; SUBP=0033WrSXqPxfM725Ws9jqgMF55529P9D9WF-lBYf6QcxT_0oJh.kv3dw5JpX5KMhUgL.Foz7e0qRS0-41K-2dJLoIEXLxKqLBozL1hnLxK.L1KnLBoeLxKBLBonLBoBLxKqLBo2L1-qLxKBLB.zL1K.t; _s_tentry=login.sina.com.cn; Apache=8247843021384.305.1646184153171; SINAGLOBAL=8247843021384.305.1646184153171; ULV=1646184153215:1:1:1:8247843021384.305.1646184153171:; XSRF-TOKEN=HukLs4DJDbQYzfbzdflz7kG8; UOR=login.sina.com.cn,weibo.com,www.google.com; WBPSESS=w6PQnJHNETvGmhGCZzFKLVgYU04Zkm35mgyIf2do9gfZBKS0Ne-c04LWmA545h0-4I8T0Pw3EZD8Sgex-0Z0pPCZSGGBEqcXJeUO9QSr6J4FIhnVwsXtR-pBHgIqoX-IZQgVUHzJNMtTB2Y5YO_APA==; SCF=AtnWa351Jh6ZHltUaoVwCzxYld90sKX-uehoVN6Z0SoDgLljbRdOka-_awj9VVZJEkikc3yD_-8ruV1ImE8wYGQ.; SUB=_2A25PJF7XDeRhGeRO6FQZ9yvFwjmIHXVsUDcfrDV8PUNbmtB-LVamkW9NUG1qmRTC84yNQx2OewO8S-sxORpoA02J; ALF=1677812229");
+        conn.setRequestProperty("Cookie", "SSOLoginState=1602124982; SUBP=0033WrSXqPxfM725Ws9jqgMF55529P9D9WF-lBYf6QcxT_0oJh.kv3dw5JpX5KMhUgL.Foz7e0qRS0-41K-2dJLoIEXLxKqLBozL1hnLxK.L1KnLBoeLxKBLBonLBoBLxKqLBo2L1-qLxKBLB.zL1K.t; _s_tentry=login.sina.com.cn; Apache=8247843021384.305.1646184153171; SINAGLOBAL=8247843021384.305.1646184153171; ULV=1646184153215:1:1:1:8247843021384.305.1646184153171:; XSRF-TOKEN=HukLs4DJDbQYzfbzdflz7kG8; UOR=login.sina.com.cn,weibo.com,www.google.com; WBPSESS=w6PQnJHNETvGmhGCZzFKLZIxY7thbUoQg_TAyNL7u2luKss5eTs1J5v1YIWgDFrbLrPicjbSYHtipj_qtI9JYd1oEOr3xn9uy5RkOeD0oYtUJJ0aYjk5RNPmQGGCbgfA; SCF=AtnWa351Jh6ZHltUaoVwCzxYld90sKX-uehoVN6Z0SoDXn7duf3O91Z24ayrMn95ohUTO2FrZtu8JXCuD7WqeMI.; SUB=_2A25PJe4yDeRhGeRO6FQZ9yvFwjmIHXVsU1j6rDV8PUNbmtB-LVnfkW9NUG1qmYzwOd8HHAX8j0lJGPiSdQJel10C; ALF=1677906399");
         conn.setRequestProperty("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36");
         if (conn.getResponseCode() == 200) {
             InputStream is = conn.getInputStream();
