@@ -1,4 +1,4 @@
-package com.ytzys.shikangweibobackup;
+package com.ytzys.shikangweibobackup.bean;
 
 import java.util.List;
 
