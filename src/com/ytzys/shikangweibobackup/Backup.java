@@ -71,7 +71,7 @@ public class Backup {
                                     System.out.println(url + " ;Get long text failed.");
                                 }
                             } else {
-                                writer.write(listEntity.text);
+                                writer.write(listEntity.text_raw);
                                 writer.close();
                             }
                             // handle edited weibo
@@ -82,7 +82,7 @@ public class Backup {
                                 List<EditHistoryBean.StatusesEntity> statuses = editHistoryBean.statuses;
                                 if (statuses != null)
                                     for (int j = 0; j < statuses.size(); j++) {
-                                        String text = statuses.get(j).text;
+                                        String text = statuses.get(j).text_raw;
 //                                        String fileStr = name + "_" + statuses.get(j).created_at.replaceAll("[ :]", "_");
                                         String fileStr = name + "_" + getFileName(statuses.get(j).created_at);
                                         File file1 = new File(dir.getPath() + "/" + fileStr + ".txt");
